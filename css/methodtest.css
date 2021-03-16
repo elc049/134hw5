@@ -1,0 +1,34 @@
+body {
+    background-color:rgb(201, 209, 219);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#buttons, #radios {
+    display: flex;
+    justify-content: center;
+    margin:25px;
+}
+
+#subBtn{
+    float: right;
+}
+
+button {
+    margin:3px;
+}
+
+#output {
+    margin:15px;
+}
+
+#response {
+    white-space: pre-wrap;
+}
+
+#inForm {
+    width: fit-content;
+    margin:auto;
+}

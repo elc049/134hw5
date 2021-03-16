@@ -1,0 +1,30 @@
+label{
+    display: table-cell;
+}
+input {
+  display: table-cell;
+}
+#post-list {
+    margin:auto;
+    border-style: double;
+    padding: 15px 25px 15px 35px;
+    width: fit-content;
+    background-color: rgb(249, 253, 255);
+}
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color:rgb(203, 217, 228);
+    font-family: 'Inconsolata', monospace;
+    line-height: 1.3;
+}
+
+div {
+    text-align: center;
+}
+
+div > button {
+    margin-top: 15px;
+}

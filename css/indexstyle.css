@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+}
+
+body {
+    background-color:whitesmoke;
+}
+
+@keyframes welcomeanim {
+  0%   {color: lightblue;}
+  25%  {color: purple;}
+  50%  {color: blue;}
+  100% {color: whitesmoke;}
+}
+
+#welcome {
+    animation-name: welcomeanim;
+    animation-duration: 6s;
+}
+
+.heading{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: minmax(100px, auto);
+}
+
+header {
+    grid-column:1/6;
+    grid-row:1;
+    object-fit: cover;
+    font-family: 'Poppins', Verdana, Tahoma, sans-serif;
+    text-align: center;
+    background-color: lightblue;
+    color: whitesmoke;
+    border-style: double;
+}
+
+
+.headerimage {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    grid-column:1/6;
+    grid-row:2;
+    margin-top: 15px;
+}
+
+.menu {
+    grid-column:3;
+    grid-row:2;
+    margin: auto;
+    width: fit-content;
+    padding: 15px 30px 15px 15px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color:whitesmoke;
+    color: lightblue;
+    border-style: double;
+}
+
+.menu:hover {
+    background-color:lightblue;
+    color: whitesmoke;
+}
+
+h2 {
+    background-color:lightblue;
+    color: whitesmoke;
+    padding: 10px;
+    border-style:double;
+    width: fit-content;
+    text-align:center;
+}
+
+.bio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(100px, auto);
+    padding-bottom:5%;
+}
+
+#biohead {
+    grid-row:1;
+    grid-column:2;
+}
+
+.mypicture{
+    grid-row:2;
+    grid-column:2/3;
+    width:fit-content;
+    object-fit: contain;
+    display: inline;
+    
+}
+
+@media (max-width:400px) {
+    img#myalt {
+        display:none;
+    }
+    .mypicture {
+        display:none;
+    }
+    .description {
+        grid-column: 1/5;
+    }
+}
+
+@media (min-width:400px) {
+    .description {
+        grid-column: 2/5;
+    }
+}
+
+.description {
+    grid-row:2;
+    border-style:double;
+    padding:15px;
+    grid-column: 3/4;
+}
+
+iframe {
+    width:100%;
+    height: 90%;
+    grid-row: 2;
+    grid-column: 2/4;
+}
+
+h3 {
+    border-style: double;
+    padding-left: 7px;
+}
+
+.education {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.25fr 1fr 1fr;
+    padding-top:5%;
+}
+
+#eduhead {
+    grid-row:1;
+    grid-column:2;
+    height:fit-content;
+}
+
+.eduabt {
+    grid-row: 3;
+    grid-column: 2/4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.5fr 0.25fr 0.5fr 0.5fr;
+}
+
+.eduabt > p {
+    grid-row: 1;
+    grid-column: 2/4;
+}
+
+#codehead {
+    grid-row: 2;
+    grid-column: 1/3;
+}
+#idehead {
+    grid-row: 2;
+    grid-column: 3/5;
+}
+ol {
+    grid-row: 3;
+    grid-column: 1/3;
+}
+code {
+    grid-row: 3;
+    grid-column: 3/5;
+}
+
+aside {
+    margin:25px;
+    border-style:dashed;
+    padding:10px;
+    background-color:lightblue;
+    grid-row: 4;
+    grid-column: 2/4;
+}
+
+.toplink {
+    text-align:center;
+}
+
+video {
+    max-width: 100%;
+}
+
+#dogpic {
+    max-width: 100%;
+}
+
+audio {
+    max-width: 100%;
+}
+
+.contactbody {
+    max-width: 50%;
+    margin:auto;
+}
+
+footer {
+    text-align: center;
+    margin: 20px;
+    line-height: 1.5;
+}
+
+pre, #emaillink {
+    margin-left: 20px;
+}
