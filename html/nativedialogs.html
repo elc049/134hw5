@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="description" content="Experimental dialog site for CSE 134B" />
+     <meta name="author" content="Elizabeth Cho" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Native Dialogs</title>
+</head>
+
+<body>
+    
+    <section>
+        <h1>Simple Dialogs?</h1>
+        <button type="button" id="alertbtn">Alert</button>
+        <button type="button" id="confirmbtn">Confirm</button>
+        <button type="button" id="promptbtn">Prompt</button>
+        <button type="button" id="spromptbtn">Safer Prompt</button>
+        <hr>
+        <output id="output"></output>
+    </section>
+     
+    <script type="text/javascript" src="node_modules/dompurify/dist/purify.min.js"></script>
+    <script>
+        //Added event listeners to each button, which trigger unique functions to handle behavior
+        document.getElementById("alertbtn").addEventListener("click", function() {
+            document.getElementById("output").innerHTML = "";
+            setTimeout(function() {
+                alert("Alert pressed!");
+            }, 0);
+        });
+
+        document.getElementById("confirmbtn").addEventListener("click", function() {
+            document.getElementById("output").innerHTML = "";
+            setTimeout(function() {
+                let result = confirm("Do you confirm this?");
+                document.getElementById("output").innerHTML = `The value returned by the confirm method is: ${result}`;
+            }, 0);
+        });
+
+        document.getElementById("promptbtn").addEventListener("click", function() {
+            document.getElementById("output").innerHTML = "";
+            setTimeout(function() {
+                let result = prompt("What is your name?");
+                if (result == null) {
+                    document.getElementById("output").innerHTML = "User didn’t enter anything";
+                }
+                else {
+                    document.getElementById("output").innerHTML = "Prompt result: " + result;
+                }
+            }, 0);
+        });
+
+        document.getElementById("spromptbtn").addEventListener("click", () => {
+            document.getElementById("output").innerHTML = "";
+            setTimeout(function() {
+                let result = prompt("What is your name?");
+                if (result == null) {
+                    document.getElementById("output").innerHTML = "User didn’t enter anything";
+                }
+                else {
+                    //The user input is sanitized here for security reasons
+                    result = DOMPurify.sanitize(result);
+                    document.getElementById("output").innerHTML = `Prompt result: ${result}`;
+                }
+            }, 0);
+        });
+    </script>
+</body>
+</html>

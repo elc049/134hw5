@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="description" content="About page for CSE134B" />
+     <meta name="author" content="Elizabeth Cho" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Elizabeth Cho's About Page</title>
+     <link href="../images/favicon.ico" rel="icon" />
+     <link rel="stylesheet" href="../css/indexstyle.css">
+</head>
+
+<body>
+
+    <section class="heading">
+        <header>
+            <h1>About Me</h1>
+        </header>
+
+        <!--Source: clipart-library.com-->
+        <img class='headerimage' src="../images/1562986.png" alt="pastel flower art">
+
+        <nav class="menu">
+            <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <main>
+        <section class="bio">
+            <h2 id="biohead">Bio</h2>
+            <picture class="mypicture">
+                <source class="mypicture" media="(max-width:575px)" srcset="../images/me-small.jpg">
+                <source class="mypicture" media="(min-width:575px)" srcset="../images/me-medium.jpg">
+                <img class="mypicture" id="myalt" src="../images/me-small.jpg" alt="a picture of myself as a student">
+            </picture>
+            <div class="description">
+                <p>
+                    My name is Elizabeth Cho, and alongside being a computer science student, I'm an avid reader, baker, and watcher of depressing movies.
+                    I've lived on both sides of the US, though I've reached no consensus on my preferred coast, and I have more scars than I know how to count.
+                    I hope you find my site to be a helpful insight into my personality and experience; if you have any questions, feel free to contact me any time.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="education">
+            <h2 id="eduhead">Education and Experience</h2>
+            <iframe media="(min-width:600px)" src="https://ucsd.edu" height="400" width="600" title="UCSD Page"></iframe>
+            <div class="eduabt">
+                <p>
+                    During my undergraduate experience at UCSD, I've explored many aspects of computer science and its practical
+                    applications. Some of the most valuable skills I've learned include the ability to be self-sufficient in seeking
+                    information and applying logic across languages and environments and the ability to communicate my understanding 
+                    of both technical and interpersonal situations.
+                </p>
+                <h3 id="codehead">Coding Languages (Ranked by <b>Proficiency</b>)</h3>
+                <ol>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>C</li>
+                    <li>Java</li>
+                    <li>ARM Assembly</li>
+                </ol>
+
+                <h3 id="idehead">IDEs I'm Comfortable With</h3>
+                <code>
+                    vim
+                    VSCode
+                    IntelliJ
+                    BlueJ
+                    Eclipse
+                    Sublime
+                </code>
+                <aside>
+                    Amongst the topics I've studied, the ones which interest me most are <strong>security</strong> and databases.
+                </aside>
+            </div>
+        </section>
+        <a class="toplink" href="about.html">To Top</a>
+     </main>
+</body>
+</html>

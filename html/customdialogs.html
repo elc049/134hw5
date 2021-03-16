@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="description" content="Experimental dialog site for CSE 134B" />
+     <meta name="author" content="Elizabeth Cho" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Custom Dialogs</title>
+</head>
+
+<body>
+    
+    <section>
+        <h1>Custom Dialogs</h1>
+        <!-- Buttons -->
+        <button type="button" id="alertbtn" name="alert" onclick="openDiag(name)">Alert</button>
+        <button type="button" id="confirmbtn" name="confirm" onclick="openDiag(name)">Confirm</button>
+        <button type="button" id="promptbtn" name="prompt" onclick="openDiag(name)">Prompt</button>
+        <button type="button" id="spromptbtn" name="sprompt" onclick="openDiag(name)">Safer Prompt</button>
+        <br><br>
+        <output id="output" style="border-style: double; padding:10px; margin-top:10px; display:none;"></output>
+
+        <!-- (Hidden) dialogs, which will be accessible by using the buttons above -->
+        <dialog id="alertdiag" style="width:10%; height:7%;">
+            <div style="text-align: center;">Alert Pressed!</div>
+            <button type="button" style="position: absolute; left:40%; bottom: 10%;" name="alert" onclick="closeDiag(name)">Ok</button>
+        </dialog>
+        <dialog id="confirmdiag" style="width: 10%; height: 7%; min-width: 100px; min-height: 75px;">
+            <div style="text-align: center;">Do you confirm this?</div>
+            <button type="button" style="position: absolute; right:10%; bottom: 10%;" name="confirm" onclick="confirm(name, value)" value="true">Ok</button>
+            <button type="button" style="position: absolute; left:10%; bottom: 10%;" name="confirm" onclick="confirm(name, value)" value="false">Cancel</button>
+        </dialog>
+        <dialog id="promptdiag" style="position:relative; height: 7%; min-width: 100px; min-height: 75px;">
+            <div style="text-align: center;">What is your name?</div>
+            <input type="text" id="prompttext">
+            <button type="button" style="position: absolute; right:10%; bottom: 10%;" name="prompt" onclick="prompt(name, value)" value="true">Ok</button>
+            <button type="button" style="position: absolute; left:10%; bottom: 10%;" name="prompt" onclick="prompt(name, value)" value="false">Cancel</button>
+        </dialog>
+        <dialog id="spromptdiag" style="position:relative; height: 7%; min-width: 100px; min-height: 75px;">
+            <div style="text-align: center;">What is your name?</div>
+            <input type="text" id="sprompttext">
+            <button type="button" style="position: absolute; right:10%; bottom: 10%;" name="sprompt" onclick="sprompt(name, value)" value="true">Ok</button>
+            <button type="button" style="position: absolute; left:10%; bottom: 10%;" name="sprompt" onclick="sprompt(name, value)" value="false">Cancel</button>
+        </dialog>
+    </section>
+     
+    <script src="../js/customdialog.js" ></script>
+    <script type="text/javascript" src="node_modules/dompurify/dist/purify.min.js"></script>
+</body>
+</html>

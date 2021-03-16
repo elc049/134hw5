@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Experimental dialog site for CSE 134B" />
+    <meta name="author" content="Elizabeth Cho" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Dialogs</title>
+    <link rel="stylesheet" href="../css/crudstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <section>
+        <h1>Big List of Potential Blog Posts</h1>
+        <ul class="flex-container" id="post-list"></ul>
+        <div>
+            <button type="button" onclick="openDiag(name)" name="add">Add</button>
+            <button type="button" onclick="openDiag(name)" name="del"><i class="fa fa-trash-o"></i></button>
+        </div>
+        <dialog id="adddiag" style="min-height: 200px; min-width: 125px;">
+            <label>Title: </label>
+            <input type="text" id="newtitle"><br><br>
+            <label>Date: </label>
+            <input type="date" id="newdate"><br><br>
+            <label>Summary: </label>
+            <input type="text" id="newsummary">
+            <button type="button" style="position: absolute; right:10%; bottom: 5%;" onclick="add()">Ok</button>
+            <button type="button" style="position: absolute; left:10%; bottom: 5%;" name="add" onclick="closeDiag(name)">Cancel</button>
+        </dialog>
+        <dialog id="deldiag" style="position: relative; min-height: 75px;">
+            <label>Title: </label>
+            <input type="text" id="deltitle"><br><br>
+            <button type="button" style="position: absolute; right:10%; bottom: 10%;" onclick="del()">Ok</button>
+            <button type="button" style="position: absolute; left:10%; bottom: 10%;" name="del" onclick="closeDiag(name)" >Cancel</button>
+        </dialog>
+        <dialog id="editdiag" style="min-height: 200px; min-width: 125px;">
+            <label>Title: </label>
+            <input type="text" id="edittitle"><br><br>
+            <label>Date: </label>
+            <input type="date" id="editdate"><br><br>
+            <label>Summary: </label>
+            <input type="text" id="editsummary">
+            <button type="button" style="position: absolute; right:10%; bottom: 5%;" onclick="edit(value)" id="editok" value="">Ok</button>
+            <button type="button" style="position: absolute; left:10%; bottom: 5%;" onclick="closeDiag('edit')">Cancel</button>
+        </dialog>
+    </section>
+     
+    <script src="../js/styledblog.js" ></script>
+    <script type="text/javascript" src="node_modules/dompurify/dist/purify.min.js"></script>
+</body>
+</html>

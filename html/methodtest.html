@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="description" content="Personal portfolio site for CSE134B" />
+     <meta name="author" content="Elizabeth Cho" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Elizabeth Cho's Portfolio Website</title>
+     <link rel="stylesheet" href="../css/methodtest.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 id="welcome">Lab 5</h1>
+        <h2>Select an API to begin.</h2>
+   </header>
+    <section>
+        <section id="radios">
+            <input type="radio" name="api" value="Fetch" onclick="setFetch()"> Fetch </br>
+            <input type="radio" name="api" value="XML" onclick="setXML()"> XML </br>
+        </section>
+        <section id="buttons">
+            <button id="postBtn" onclick="">Post</button>
+            <button id="getBtn" onclick="">Get</button>
+            <button id="putBtn" onclick="">Put</button>
+            <button id="deleteBtn" onclick="">Delete</button>
+        </section>
+        <form id="inForm" hidden>
+            <fieldset>
+                <legend>Input Info:</legend>
+                <label class="post put delete">ID:</label><br>
+                <input class="post put delete" type="text" id="id"><br><br>
+                <label class="post put">Article Name:</label><br>
+                <input class="post put" type="text" id="article_name"><br><br>
+                <label class="post put">Article Body:</label><br>
+                <input class="post put" type="text" id="article_body"><br><br>
+                <label class="post put">Date:</label><br>
+                <input class="post put" id="date" disabled><br><br>
+                <input type="reset">
+                <input type="button" id="subBtn" value="Submit" onclick="subForm(this.value, this.name)">
+            </fieldset>
+        </form>
+        <hr>
+        <section id="output">
+            <output id="response"></output>
+        </section>
+    </section>
+    <script type="text/javascript" src="../js/methodtest.js"></script>
+</body>
+</html>
